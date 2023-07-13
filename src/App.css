@@ -1,0 +1,195 @@
+.WeatherReport{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgba(88, 35, 76, 0.25);
+}
+
+.loader_all {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    right: 50%;
+    left: 50%;
+    bottom: 50%;
+    backdrop-filter: blur(20px);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    transition: .5s all ease-in-out;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+}
+
+.loader {
+    --duration: 3s;
+    --primary: #24D898;
+    --primary-light: #24D898;
+    --primary-rgba: rgba(39, 94, 254, 0);
+    width: 200px;
+    height: 320px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+@media (max-width: 480px) {
+    .loader {
+        zoom: 0.44;
+    }
+}
+
+.box {
+    --x: 0;
+    --y: 0;
+    position: absolute;
+    animation: var(--duration) linear forwards infinite;
+    transform: translate(var(--x), var(--y));
+}
+.box div {
+    background-color: var(--primary);
+    width: 48px;
+    height: 48px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: var(--duration) ease forwards infinite;
+    transform: rotatey(-47deg) rotatex(-15deg) rotatez(15deg) scale(0);
+}
+.box div:after, .box div:before {
+    --rx: 90deg;
+    --ry: 0deg;
+    --z: 24px;
+    --y: -24px;
+    --x: 0;
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    width: inherit;
+    height: inherit;
+    transform: rotatex(var(--rx)) rotatey(var(--ry)) translate(var(--x), var(--y)) translatez(var(--z));
+    filter: brightness(var(--b, 1.2));
+}
+.box div:after {
+    --rx: 0deg;
+    --ry: 90deg;
+    --b: 1.4;
+    --y: 0;
+    --x: 24px;
+}
+.box.box0 {
+    --x: -220px;
+    --y: -120px;
+    left: 58px;
+    top: 108px;
+}
+.box.box1 {
+    --x: -260px;
+    --y: 120px;
+    left: 25px;
+    top: 120px;
+}
+.box.box2 {
+    --x: 120px;
+    --y: -190px;
+    left: 58px;
+    top: 64px;
+}
+.box.box3 {
+    --x: 280px;
+    --y: -40px;
+    left: 91px;
+    top: 120px;
+}
+.box.box4 {
+    --x: 60px;
+    --y: 200px;
+    left: 58px;
+    top: 132px;
+}
+.box.box5 {
+    --x: -220px;
+    --y: -120px;
+    left: 25px;
+    top: 76px;
+}
+.box.box6 {
+    --x: -260px;
+    --y: 120px;
+    left: 91px;
+    top: 76px;
+}
+.box.box7 {
+    --x: -240px;
+    --y: 200px;
+    left: 58px;
+    top: 87px;
+}
+
+.box0 {
+    animation-name: box-move0;
+}
+
+.box0 div{
+    animation-name: box-scale0;
+}
+
+.box1 {
+    animation-name: box-move1;
+}
+
+.box1 div{
+    animation-name: box-scale1;
+}
+
+.box2 {
+    animation-name: box-move2;
+}
+
+.box2 div{
+    animation-name: box-scale2;
+}
+
+.box3 {
+    animation-name: box-move3;
+}
+
+.box3 div{
+    animation-name: box-scale3;
+}
+
+.box4 {
+    animation-name: box-move4;
+}
+
+.box4 div{
+    animation-name: box-scale4;
+}
+
+.box5 {
+    animation-name: box-move5;
+}
+
+.box5 div{
+    animation-name: box-scale5;
+}
+
+.box6 {
+    animation-name: box-move6;
+}
+
+.box6 div{
+    animation-name: box-scale6;
+}
+
+.box7 {
+    animation-name: box-move7;
+}
+
+.box7 div{
+    animation-name: box-scale7;
+}
